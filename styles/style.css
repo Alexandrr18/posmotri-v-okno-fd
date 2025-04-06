@@ -29,7 +29,7 @@ html {
 
 .page {
   inline-size: 1200px;
-  /* block-size: 100%; */
+  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -97,6 +97,7 @@ html {
   display: flex;
   width: fit-content;
   gap: 5px;
+  align-items: center;
 }
 
 /* состояние ховер на чекбоксы*/
@@ -162,7 +163,10 @@ html {
   background-color: transparent;
   position: relative;
   display: flex;
-  right: 3px;
+}
+
+.search-form__label-text {
+  padding-right: 1px;
 }
 
 /* состояние чекед на чекбоксы */
@@ -263,12 +267,12 @@ html {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  min-height: 566px;
+  /* min-height: 566px; */
   overflow: auto;
 }
 
 .content__list-item {
-  padding-left: 3px;
+  padding-left: 2px;
   padding-right: 3px;
   padding-top: 2px;
   display: block;
@@ -286,7 +290,7 @@ html {
   outline: none;
 }
 
-.content__video-card:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #FFFFFF;
 }
 
@@ -333,7 +337,7 @@ html {
 
 /* параграф в контейнере карточки ссылки элементов городов */
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-weight: lighter;
   font-size: 18px;
   /* letter-spacing: 0px; */
