@@ -19,14 +19,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 800px;
+  min-height: 800px;
 }
 
- .content {
+.content {
   display: flex;
   width: 1140px;
   gap: 30px;
-
+  justify-content: center;
+  align-items: center;
 }
 
 /* секция result */
@@ -34,7 +35,7 @@ html {
   display: flex;
   flex-direction: column;
   max-height: 456px;
-  padding-top: 78px;
+  padding-top: 36px;
 }
 
 .result__video-container {
@@ -72,6 +73,7 @@ html {
 .search-form__label {
   display: flex;
   width: fit-content;
+  gap: 5px;
 }
 
 /* состояние ховер на чекбоксы*/
@@ -88,43 +90,33 @@ cursor: pointer;
 
 /* input строка ввода города */
 .search-form__textfield {
-  border-top: 1px;
-  border-bottom: 1px;
-  border-left: 0;
-  border-right: 0;
-  border-style: solid;
-  border-color: #FFFFFF;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   background-color: transparent;
   line-height: 100%;
   width: 225px;
   font-size: 18px;
-  appearance: none;
   font-family: 'Fira Sans Condensed', sans-serif;
   word-spacing: -4px;
   color: rgba(255, 255, 255, 1);
-  ;
-}
-
-/* состояние фокус на поле ввода */
-.search-form__textfield:focus {
   outline: none;
 }
 
-.search-form__label:has(.search-form__textfield:focus-visible) {
-  outline: 1px solid #FFFFFF;
+.search-form__textfield:active {
+  border: 1px solid #fff;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
   outline-offset: 1px;
-}
-
-.search-form__label:active {
-  outline: none;
-  border-left: 1px solid #FFFFFF;
-  border-right: 1px solid #FFFFFF;
 }
 
 /* список кнопок времени суток */
 .search-form__checkbox-list {
   display: flex;
-  gap: 21px;
+  gap: 15px;
   justify-content: space-between;
   align-items: center;
 }
@@ -205,8 +197,8 @@ cursor: pointer;
 }
 
 .button:focus {
-outline: none;
-outline-offset: 1px;
+  outline: none;
+  outline-offset: 1px;
 }
 
 .button:focus-visible {
@@ -219,8 +211,7 @@ outline-offset: 1px;
   height: 534px;
   display: flex;
   flex-direction: column;
-  padding-top: 6px;
-  gap: 16px;
+  gap: 22px;
 }
 
 /* заголовок */
@@ -243,20 +234,21 @@ outline-offset: 1px;
   height: 301px;
   overflow: auto;
   position: relative;
-  padding-top: 3px;
 }
 
 /* список городов */
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 23px;
+  gap: 30px;
   min-height: 566px;
+  overflow: auto;
 }
 
 .content__list-item {
   padding-left: 3px;
   padding-right: 3px;
+  padding-top: 2px;
   display: block;
 }
 
@@ -288,6 +280,10 @@ outline-offset: 1px;
   text-decoration: none;
 }
 
+.content__card-link_current {
+  background: rgba(84, 80, 80, 1);
+}
+
 /* карточка в ссылке элемента списка городов */
 .content__video-card {
   display: flex;
@@ -303,9 +299,10 @@ outline-offset: 1px;
 
 /* контейнер в карточке ссылки элементов городов */
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
+  line-height: 100%;
   text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
@@ -317,7 +314,6 @@ outline-offset: 1px;
   font-family: Fira Sans Condensed;
   font-weight: lighter;
   font-size: 18px;
-  line-height: 16.2px;
   letter-spacing: 0%;
   display: -webkit-box;
   -webkit-line-clamp: 3; 
@@ -330,8 +326,9 @@ outline-offset: 1px;
 
 /* ссылка на само видео из списка городов */
 .content__video-card-thumbnail {
-  width: 194px;
-  object-fit: contain;
+  min-width: 194px;
+  height: 103px;
+  object-fit: cover;
   object-position: center;
 }
 
